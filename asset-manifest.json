@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/infocare/static/css/main.da44fb30.css",
+    "main.js": "/infocare/static/js/main.bb5944ca.js",
+    "static/media/picture.jpg": "/infocare/static/media/picture.d4b09cf1cb5e60604ad0.jpg",
+    "static/media/logo.png": "/infocare/static/media/logo.1d71b39f17dc068c98b5.png",
+    "index.html": "/infocare/index.html",
+    "main.da44fb30.css.map": "/infocare/static/css/main.da44fb30.css.map",
+    "main.bb5944ca.js.map": "/infocare/static/js/main.bb5944ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da44fb30.css",
+    "static/js/main.bb5944ca.js"
+  ]
+}
