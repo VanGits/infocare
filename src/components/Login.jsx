@@ -40,6 +40,12 @@ const Login = () => {
             setError(err.message)
         }
     }
+    const handleEnter = (e) => {
+        if (e.key === "Enter"){
+            
+            handleSubmit(e)
+        }
+    }
 
 
     
@@ -53,7 +59,7 @@ const Login = () => {
                         <div className="main__text">
                             <h1>Log In</h1>
                             <div className="alert-wrapper black">
-                                {error && <div>{error}</div>}
+                                {error && <div>{error.substring(9)}</div>}
                             </div>
                            
                         </div>
@@ -63,11 +69,13 @@ const Login = () => {
                             className="input" 
                             placeholder='Email' 
                             type="email"
+                            onKeyDown={handleEnter}
                             onChange={ (e) => setEmail(e.target.value)} />
                             <input 
                             className="input"
                              placeholder='Password'
                              type="password"
+                             onKeyDown={handleEnter}
                              onChange={(e) => setPassword(e.target.value)} />
                         </div>
                       

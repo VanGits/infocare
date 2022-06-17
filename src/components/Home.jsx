@@ -6,16 +6,20 @@ import { IoAdd } from "react-icons/io5";
 import { useUserAuth } from '../context/UserAuthContext';
 import { auth } from '../firebase/init';
 import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect } from 'react';
 
 const Home = () => {
     
+
+    
+   
 
     return (
         <div className="home__page">
             <div className="row">
                 <div className="container">
                     <div className="content">
-                        <div className="search__box">
+                        {/* <div className="search__box">
                             <div className="search__area">
                                 <FaSearch className = "fa fa-search "  />
                                 <input className="search__input box-shadow" placeholder="Search" type="text" />
@@ -25,9 +29,9 @@ const Home = () => {
                             </div>
 
                            
-                        </div>
+                        </div> 
 
-                        <hr className='line black'/>
+                        <hr className='line black'/>*/}
 
                         <div className="table">
                             <table>

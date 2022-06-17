@@ -24,6 +24,12 @@ const Signup = () => {
         }   
     }
 
+    const handleEnter = (e) => {
+        if (e.key === "Enter"){
+            handleSubmit(e) 
+        }
+    }
+
     
 
 
@@ -39,7 +45,7 @@ const Signup = () => {
 
                 <h1>Sign Up</h1>
                 <div className="alert-wrapper black">
-                    {error && <div>{error}</div>}
+                    {error && <div>{error.substring(9)}</div>}
                 </div>
                 
                 
@@ -51,11 +57,13 @@ const Signup = () => {
                 <input className="input"
                  placeholder='Email' 
                  type="email"
-                 onChange={ (e) => setEmail(e.target.value)} />
+                 onChange={ (e) => setEmail(e.target.value)} 
+                 onKeyDown = {handleEnter}/>
                 <input className="input" 
                 placeholder='Password'
                 type="password" 
-                onChange={ (e) => setPassword(e.target.value)}/>
+                onChange={ (e) => setPassword(e.target.value)}
+                onKeyDown = {handleEnter}/>
             </div>
           
             <div className="buttons">

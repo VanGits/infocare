@@ -91,7 +91,7 @@ button{
 
 hr{
   width: 100%;
-  color: #242424;
+  color: lightgrey;
   height: 1.5px;
 }
 table{
@@ -164,7 +164,7 @@ LOGIN PAGE
 */
 
 .login__page, .signup__page{
-  background: url('./assets/picture.jpg');
+  /*background: url('./assets/picture.jpg');*/
   z-index: 3;
   background-size: cover;
   background-repeat: no-repeat;
@@ -172,11 +172,14 @@ LOGIN PAGE
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(244, 244, 244);
   
 }
 
 .login-box, .signup-box{
   position: absolute;
+  box-shadow: 0px 2.98px 7.46px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -186,7 +189,6 @@ LOGIN PAGE
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.877);
   padding: 56px 32px;
   border-radius: 12px;
   overflow: hidden;
@@ -319,7 +321,7 @@ HOME
 */
 
 .home__page{
-  background-color: #cfcfcf81;
+  background-color: rgb(255, 255, 255);
   
 }
 
@@ -331,8 +333,14 @@ HOME
   
 }
 
+.search__area .search__input{
+  flex: 1;
+  margin-right: 30px;
+}
+
 .search__input{
   transition: all 300ms ease;
+
 }
 
 
@@ -349,6 +357,8 @@ HOME
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex: 1;
 }
 
 .file__import-area{
@@ -389,10 +399,10 @@ HOME
 
 
 .search__input{
-  margin-left: 12px;
   width: 100%;
-  max-width: 300px;
-  height: 40px;
+  max-width: 1000px;
+  height: 50px;
+ 
 }
 
 
@@ -403,15 +413,101 @@ NAVIGATION BAR
 */
 .nav__page{
   display: flex;
-  justify-content: center;
-  background-color: #242424;
+  justify-content: space-around;
+  background-color: #fff;
+  position: relative;
+  
   
 
 }
 .nav-img{
   width: 100px;
   height: 100px;
-  filter: invert(1);
+}
+
+.profile__area:hover .dropdown__menu{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 270px;
+  margin-right: 240px;
+  max-width: 360px;
+  width: 100%;
+  height: 180px;
+  z-index: 1000;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0px 2.98px 7.46px 0px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.dropdown__menu{
+  
+  display: none;
+  
+}
+.dropdown__menu:hover{
+  display: flex;
+}
+
+.dropdown__profile{
+  display: flex;
+  align-items: center;
+
+  
+}
+
+.dropdown__profile h1{
+  font-size: 18px !important;
+}
+
+.dropdown__img{
+  border-radius: 50%;
+  max-width: 60px;
+}
+
+.dropdown__img-alt{
+  border-radius: 50%;
+  max-width: 60px;
+  background-color: rgb(184, 64, 64);
+}
+
+.logout__btn-wrapper{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(235, 240, 240);
+}
+
+.dropdown__logout{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.dropdown__logout:hover{
+  background-color: rgb(222, 222, 222);
+  cursor: pointer;
+}
+
+.logOut-text {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.logout-btn{
+  
+  font-size: 20px;
+  text-align: center;
+  
 }
 
 .logo__area{
@@ -426,6 +522,7 @@ NAVIGATION BAR
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 2.5px;
+  color: black;
   
 }
 
@@ -442,17 +539,20 @@ NAVIGATION BAR
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 90px;
+  box-shadow: 0px 2.98px 7.46px 0px rgba(0, 0, 0, 0.1)
 }
 
 
 
 .profile__area{
-  max-width: 250px;
+  max-width: 50px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-right: 50px;
 }
 
 .profile__area h1:last-child{
@@ -473,8 +573,8 @@ NAVIGATION BAR
   background-color: rgb(184, 64, 64);
   width: 50px;
   height: 50px;
-  border: 1px solid #242424;
   border-radius: 50%;
+  
   
 }
 
