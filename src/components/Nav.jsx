@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import  logo  from '../assets/logo.png'
 import { useUserAuth } from '../context/UserAuthContext';
 import { auth } from '../firebase/init';
@@ -16,13 +16,15 @@ const Nav = () => {
     const handleLogOut = async() => {
         try {
             await logOut()
+            console.log(logOut,"yes", user)
+            
         } catch (err) {
             console.log(err.message)
         }
     }
 
     const userFix = () => {
-        if (user.photoURL) {
+        if (user && user.photoURL) {
             return <img className = "profile-circle white click" src = {user.photoURL}/>
         }
         else if (user) {
@@ -31,6 +33,7 @@ const Nav = () => {
          
             
         }
+       
     
     }
     return (
@@ -54,9 +57,9 @@ const Nav = () => {
                     </h1>
                     <div className="dropdown__menu">
                         <div className="dropdown__profile">
-                        <img src={user.photoURL} alt="" className='dropdown__img'/>
+                        <img src={user && user.photoURL} alt="" className='dropdown__img'/>
                             {/* {user.photoURL ? <img src={user.photoURL} alt="" className='dropdown__img'/> : <div className='profile-circle white'> <h1>{user.email.charAt(0).toUpperCase()}</h1> </div>} */}
-                            <h1>{user.displayName}</h1>
+                            <h1>{user && user.displayName}</h1>
                         </div>
                         <hr />
                         <div className="dropdown__logout" onClick = {handleLogOut}>
